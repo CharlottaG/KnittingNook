@@ -5,5 +5,5 @@ from .models import Pattern
 # Create your views here.
 
 class PatternList(generic.ListView):
-    queryset = Pattern.objects.all()
+    queryset = Pattern.objects.filter(status=1)
     template_name = "pattern_list.html"
