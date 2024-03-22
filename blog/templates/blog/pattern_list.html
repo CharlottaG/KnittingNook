@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern list</title>
+</head>
+<body>
+
+    <h1>Posts list</h1>
+    {% for pattern in object_list %}
+    <h2>{{pattern.pattern_name}}</h2>
+    <p>Author: {{pattern.created_by}}</p>
+    {% endfor %}
+
+</body>
+</html>
