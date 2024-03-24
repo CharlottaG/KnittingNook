@@ -1,0 +1,21 @@
+/* Page */
+body {
+    background-color: #FFFFFF;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+h1 {
+    font-size: 1 em;
+}
+
+/* Pattern */
+.card {
+    border: solid 1px;
+    background-color: transparent;
+}
+
+
+
+
+
+
