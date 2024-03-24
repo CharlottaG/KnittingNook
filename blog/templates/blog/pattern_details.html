@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<!-- pattern_details.html content starts here -->
+
+<h1>{{pattern.pattern_name}}</h1>
+
+<div class="row">
+  <p>{{pattern.created_by}}</p>
+  <p>{{pattern.instructions}}</p>
+  <p>{{pattern.needle_size}}</p>
+  <p>{{pattern.gauge}}</p>
+  <p>{{pattern.yarn}}</p>
+</div>
+
+<!-- pattern_details.html content ends here -->
+{% endblock %}

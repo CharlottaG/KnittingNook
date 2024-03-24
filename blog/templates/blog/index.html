@@ -31,7 +31,7 @@
                 <li class="list-group-item"><strong>Needle size:</strong> {{ pattern.needle_size }}</li>
             </ul>
             <div class="card-body">
-                <a href="#" class="card-link">View pattern</a>
+                <a href="{% url 'pattern_details' pattern.slug %}" class="card-link">View pattern</a>
                 <a href="#" class="card-link">Add to my project list</a>
             </div>
         </div>
