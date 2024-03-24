@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 
 <!-- index.html content starts here -->
@@ -10,7 +10,17 @@
     {% for pattern in object_list %}
     <div class="col-md-4">
         <div class="card" style="width: 25rem;">
-            <img class="card-img-top" src="#" alt="Card image cap"width="300" height="200">
+            <!-- Start of Cloudinary image -->
+            <div class="image-container">
+                {% if "placeholder" in pattern.featured_image.url %}
+                <img class="card-img-top" src="{% static 'images/default.jpg' %}"
+                alt="placeholder image" width="300" height="200" crop="fill">
+                {% else %}
+                <img class="card-img-top" src=" {{ pattern.featured_image.url }}"
+                  alt="{{ pattern.pattern_name }}">
+                {% endif %}
+            </div>
+            <!-- End of Cloudinary image -->
             <div class="card-body">
                 <h4 class="card-title">{{ pattern.pattern_name }}</h4>
                 <p class="card-text"><strong>Created by:</strong> {{ pattern.created_by }}</p>
