@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- index.html content starts here -->
+
+    <h1>Pattern list</h1>
+    {% for pattern in object_list %}
+
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="../blog/static/images/olliss-7mJj0Boa4jc-unsplash.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{pattern.pattern_name}}</h5>
+          <p class="card-text"><strong>Created by: {{pattern.created_by}}</strong></p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">{{ pattern.difficulity_level }}</li>
+          <li class="list-group-item">{{ pattern.gauge }}</li>
+          <li class="list-group-item">{{ pattern.needle_size }}</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+    </div>
+    {% endfor %}
+
+<!-- index.html content ends here -->
+{% endblock %}

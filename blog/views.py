@@ -6,4 +6,5 @@ from .models import Pattern
 
 class PatternList(generic.ListView):
     queryset = Pattern.objects.filter(status=1)
-    template_name = "pattern_list.html"
+    template_name = "blog/index.html"
+    paginate_by = 6
