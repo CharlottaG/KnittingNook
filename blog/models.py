@@ -10,6 +10,7 @@ LEVEL = ((0, "Beginner"), (1, "Intermediate"), (2, "Advanced"))
 class Pattern(models.Model):
     pattern_name = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
+    description = models.CharField(max_length=200, default="description")
     created_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name="patterncreator")
     featured_image = CloudinaryField('image', default='placeholder')
     instructions = models.TextField()

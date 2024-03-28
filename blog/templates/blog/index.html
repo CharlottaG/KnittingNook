@@ -4,55 +4,12 @@
 
 <!-- index.html content starts here -->
 
-<h1>Pattern list</h1>
-
-<div class="row">
-    {% for pattern in object_list %}
-    <div class="col-md-4">
-        <div class="card" style="width: 25rem;">
-            <!-- Start of Cloudinary image -->
-            <div class="image-container">
-                {% if "placeholder" in pattern.featured_image.url %}
-                <img class="card-img-top" src="{% static 'images/default.jpg' %}"
-                alt="placeholder image" width="300" height="200" crop="fill">
-                {% else %}
-                <img class="card-img-top" src=" {{ pattern.featured_image.url }}"
-                  alt="{{ pattern.pattern_name }}">
-                {% endif %}
-            </div>
-            <!-- End of Cloudinary image -->
-            <div class="card-body">
-                <h4 class="card-title">{{ pattern.pattern_name }}</h4>
-                <p class="card-text"><strong>Created by:</strong> {{ pattern.created_by }}</p>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item"><strong>Difficulty level:</strong> {{ pattern.difficulity_level }}</li>
-                <li class="list-group-item"><strong>Gauge:</strong> {{ pattern.gauge }}</li>
-                <li class="list-group-item"><strong>Needle size:</strong> {{ pattern.needle_size }}</li>
-            </ul>
-            <div class="card-body">
-                <a href="{% url 'pattern_details' pattern.slug %}" class="card-link">View pattern</a>
-                <a href="#" class="card-link">Add to my project list</a>
-            </div>
-        </div>
-    </div>
-    {% if forloop.counter|divisibleby:3 and not forloop.last %}
-</div>
-<div class="row">
-    {% endif %}
-    {% endfor %}
-</div>
-
-<!-- Pagination -->
-{% if is_paginated %}
-<nav aria-label="Page navigation">
-    <ul class="pagination justify-content-center">
-        {% if page_obj.has_next %}
-        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-        {% endif %}
-    </ul>
-</nav>
-{% endif %}
+<h1>The Knitting Nook</h1>
+<p>Welcome to the Knitting Nook, your cozy corner of the internet dedicated to all things knitting! Whether you're a
+    seasoned pro or just picking up your first set of needles, our community is here to inspire, educate, and celebrate
+    the art of knitting. Dive into a world of beautiful patterns, helpful tutorials, and vibrant discussions, and join
+    us in creating something truly special, one stitch at a time. Start your knitting journey with us today!</p>
+        
 
 <!-- index.html content ends here -->
 {% endblock %}
