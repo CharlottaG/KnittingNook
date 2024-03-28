@@ -9,6 +9,9 @@ from .models import Pattern
 class HomePage(TemplateView):
     template_name = "blog/index.html"
 
+class Profile(TemplateView):
+    template_name = "blog/user_profile.html"
+
 class PatternList(generic.ListView):
     queryset = Pattern.objects.filter(status=1)
     template_name = "blog/pattern_list.html"

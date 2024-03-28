@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<!-- user_profile.html content starts here -->
+
+<h1>User profile page</h1>
+
+<!-- user_profile.html content ends here -->
+{% endblock %}

@@ -1,11 +1,36 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, AbstractUser
 from cloudinary.models import CloudinaryField
+
+ 
+
 
 STATUS = ((0, "Draft"), (1, "Published"))
 LEVEL = ((0, "Beginner"), (1, "Intermediate"), (2, "Advanced"))
 
 # Create your models here.
+
+
+class UserProfile(AbstractUser):
+    bio = models.TextField(blank=True)
+    
+    groups = models.ManyToManyField(
+        'auth.Group',
+        related_name='user_profiles',  
+        blank=True,
+        verbose_name='groups',
+        help_text='The groups this user belongs to. A user will get all permissions granted to each of their groups.',
+    )
+    user_permissions = models.ManyToManyField(
+        'auth.Permission',
+        related_name='user_profiles',  
+        blank=True,
+        verbose_name='user permissions',
+        help_text='Specific permissions for this user.',
+    )
+
+    def __str__(self):
+        return self.username
 
 class Pattern(models.Model):
     pattern_name = models.CharField(max_length=200, unique=True)
